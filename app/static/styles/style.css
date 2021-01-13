@@ -1,0 +1,74 @@
+.navbar-brand {
+    display: inline-block;
+}
+
+.navbar-brand>img {
+    width: 100px; 
+    display: inline-block; 
+    padding-right: 10px; 
+    border-right: 2px #F0F0F0 solid;
+}
+
+.website-name {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.navbar-default .navbar-nav>li>a.login{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    padding: 0.5em 1em;
+    margin-top: 7px;
+}
+
+.btn:hover,
+.btn-default:hover {
+    opacity: 0.8;
+    background-color:  #337ab7;
+    color: white;
+}
+
+.btn-default {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    padding: 0.5em 1em;
+    margin-top: 7px;
+    background-color:  #337ab7;
+}
+
+navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover {
+background-color:  #337ab7;
+}
+
+.website-body {
+    width : 70%;
+    margin: 0 auto;
+}
+
+.login-body{
+    margin: 0 auto;
+    max-width: 50%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+@media (min-width: 992px) {
+    .col-md-10 {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px){
+    .navbar-nav>li>a {
+        padding: 0.5em 0;
+        margin: 0;
+    }
+}

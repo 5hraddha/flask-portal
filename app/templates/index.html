@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Welcome, {{ current_user.username }}!</h1>
+    <p>
+        <h2>BNC to DQE Rules Onboarding Portal</h2><br>
+        <a href="{{ url_for('registerdataset') }}">Register Datasets</a>
+    </p>
+{% endblock %}

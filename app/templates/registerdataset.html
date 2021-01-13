@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    <form class="form form-horizontal" action="" method="post" role="form" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.datasetname.label }}<br>
+            {{ form.datasetname(size=80) }}<br>
+            {% for error in form.datasetname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.field1.label }}<br>
+            {{ form.field1(size=32) }}<br>
+            {% for error in form.field1.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.field2.label }}<br>
+            {{ form.field2(size=32) }}<br>
+            {% for error in form.field2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>       
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
