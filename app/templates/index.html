@@ -1,10 +1,41 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+{% block welcome_user %}
+<p class="welcome-text">Welcome, <span class="welcome-text-user">{{ current_user.username }}</span>!</p>
+{% endblock %}
+
 {% block app_content %}
-    <h1>Welcome, {{ current_user.username }}!</h1>
-    <p>
-        <h2>BNC to DQE Rules Onboarding Portal</h2><br>
-        <a href="{{ url_for('registerdataset') }}">Register Datasets</a>
-    </p>
+    <div class="card text-center card-shadow">
+        <div class="card-header card-header-tab">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#registerdatasets">Register Datasets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#exportexcel">Export Excel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  data-toggle="pill" href="#randomtask">Random Task</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body card-body-tab">
+            <div class="tab-content">
+                <div id="registerdatasets" class="tab-pane fade in active">
+                    <h3>Register Datasets</h3>
+                    <p>Some content.</p>
+                </div>
+                <div id="exportexcel" class="tab-pane fade">
+                    <h3>Export Excel</h3>
+                    <p>Some content.</p>
+                </div>
+                <div id="randomtask" class="tab-pane fade">
+                    <h3>Random Task</h3>
+                    <p>Some content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

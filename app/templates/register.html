@@ -2,10 +2,20 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>Register</h1>
-    <div class="row">
-        <div class="col-md-4">
-            {{ wtf.quick_form(form) }}
+    <div class="login-body">
+        <div class="card card-login card-shadow">
+            <div class="card-body">
+                <h1 class="card-title text-center mb-4 mt-1">Register</h1>
+                <hr>
+                <form action="" method="post" novalidate role="form">
+                    {{ form.hidden_tag() }}
+                    {{ wtf.form_field(form.username, class="form-control", placeholder="Enter your Username") }}
+                    {{ wtf.form_field(form.email, class="form-control", placeholder="Enter your Email") }}
+                    {{ wtf.form_field(form.password, class="form-control", placeholder="Enter your Password") }}
+                    {{ wtf.form_field(form.password2, class="form-control", placeholder="Re-enter your Password") }}
+                    <button type="submit" class="btn btn-primary btn-block" role="button"> Register  </button>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}
