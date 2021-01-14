@@ -1,12 +1,16 @@
-.navbar-brand {
-    display: inline-block;
+:root {
+    --ff-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--ff-body);
 }
 
 .navbar-brand>img {
     width: 100px;
     display: inline-block;
     padding-right: 10px;
-    border-right: 2px #F0F0F0 solid;
+    border-right: 2px #CCD1D1 solid;
 }
 
 .btn-primary, .navbar-default .navbar-nav>li>a.login {
@@ -28,17 +32,8 @@ navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
     background-color: #337ab7;
 }
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     background-color: #FF5733;
-}
-
-input[type="text"], input[type="password"] {
-    width: 100%;
-}
-
-.website-name {
-    display: inline-block;
-    padding-right: 20px;
 }
 
 .login-body {
@@ -46,56 +41,15 @@ input[type="text"], input[type="password"] {
     max-width: 50%;
 }
 
-.card-login {
-    padding: 10px 30px;
-    margin-top: 20px;
-}
-
-.card-shadow {
-    box-shadow: 0px -2px 9px -4px rgba(0, 0, 0, 0.46);
-    border-radius: 5px;
-}
-
-.card-header-tab {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-}
-
-.card-body-tab {
-    flex: 1 1 auto;
-    padding: 1.25rem;
-}
-
 .welcome-text {
     text-transform: capitalize;
     font-weight: bold;
-    /* letter-spacing: 2px; */
     color: #337ab7;
-    padding: 0.5em 1em;
+    padding: 0.5em 1em 0.5em 0;
     margin-top: 7px;
     margin-right: 0.8em;
 }
 
 .welcome-text-user {
     color: #FF5733;
-}
-
-@media (min-width: 992px) {
-    .col-md-10 {
-        float: none;
-        width: 100%;
-    }
-    .col-md-4 {
-        float: none;
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px) {
-    .navbar-nav>li>a {
-        padding: 0.5em 0;
-        margin: 0;
-    }
 }

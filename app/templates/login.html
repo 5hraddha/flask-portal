@@ -1,65 +1,22 @@
 {% extends 'base.html' %}
-{% import 'bootstrap/wtf.html' as wtf %}
+{% from 'bootstrap/form.html' import render_form, render_field %}
 
 {% block app_content %}
-
 <div class="login-body">
-    <div class="card card-login card-shadow">
+    <div class="card shadow-sm rounded">
+        <h1 class="card-header text-center">Sign in</h1>
         <div class="card-body">
-            <h1 class="card-title text-center mb-4 mt-1">Sign in</h1>
-            <hr>
             <form action="" method="post" novalidate role="form">
                 {{ form.hidden_tag() }}
-                {{ wtf.form_field(form.username, class="form-control", placeholder="Enter your Username") }}
-                {{ wtf.form_field(form.password, class="form-control", placeholder="Enter your Password") }}
+                {{ render_field(form.username, class="form-control", placeholder="Enter your Username") }}
+                {{ render_field(form.password, class="form-control", placeholder="Enter your Password") }}
                 <button type="submit" class="btn btn-primary btn-block" role="button"> Login </button>
-                <div class="text-center">
-                    {{ wtf.form_field(form.remember_me, class="form-control") }}
+                <div class="text-center mt-2">
+                    {{ render_field(form.remember_me, class="form-control") }}
                 </div>
                 <p class="text-center">New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
             </form>
         </div>
     </div>
 </div>
-
-    <!-- <div class="login-body">
-        <div class="text-center">
-            <h1>Sign In</h1>
-        </div>
-        <div class="row">
-            <div class="col-md-10"> -->
-                <!-- {{ wtf.quick_form(form) }} -->
-                <!-- <form action="" method="post" novalidate role="form">
-                    {{ form.hidden_tag() }}
-                        {{ wtf.form_field(form.username, class="form-control", placeholder="Enter your Username") }}
-                        {{ wtf.form_field(form.password, class="form-control", placeholder="Enter your Password") }}
-                        {{ wtf.form_field(form.remember_me) }}
-                        <div class="text-center">
-                            {{ wtf.form_field(form.submit) }}
-                        </div> -->
-                    <!-- <p>
-                        {{ form.username.label }}<br>
-                        {{ form.username(size=32) }}<br>
-                        {% for error in form.username.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </p>
-                    <p>
-                        {{ form.password.label }}<br>
-                        {{ form.password(size=32) }}<br>
-                        {% for error in form.password.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </p>
-                    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-                    <p>{{ form.submit() }}</p> -->
-                <!-- </form>
-            </div>
-        </div>
-        <br>
-        <div class="text-center">
-            <p class="center_text">New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
-        </div>
-    </div> -->
-
 {% endblock %}
